@@ -1,0 +1,205 @@
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\addto\captionsspanish{\renewcommand{\contentsname}{Índice general}}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{indentfirst}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[left=2.54cm,right=2.54cm,top=1.3cm,bottom=4.2cm,headsep=30pt,footskip=0.02cm]{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{longtable}
+% \usepackage{tocbibind} % Evita que el índice agregue entradas extra (Índice/Bibliografía)
+\usepackage{pgfgantt}
+\usepackage{pdflscape}
+\usepackage{tocloft}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{adjustbox}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage{media9}
+\usepackage{float}
+\usepackage{caption}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{plainnat}
+
+% Configuración de titlesec
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+\titlespacing*{\section}{0pt}{18pt}{12pt}
+\titlespacing*{\subsection}{0pt}{14pt}{8pt}
+\titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+\setlength{\parindent}{1.27cm}
+
+\lstset{
+    inputencoding=utf8,
+    extendedchars=true,
+    literate=%
+        {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+        {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+        {ñ}{{\~n}}1 {Ñ}{{\~N}}1
+}
+
+% Configuración de encabezados y pies de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\raisebox{-10pt}{\thepage}}
+% \setlength{\headheight}{70pt}
+% \fancyhead[L]{\makebox[0pt]{\includegraphics[height=1.7cm]{imagenes/escudo-1-1.png}}}
+% \fancyhead[R]{\makebox[0pt]{\includegraphics[height=1.7cm]{imagenes/logoCarrera.png}}}
+% \fancyhead[C]{
+%     \footnotesize
+%     \small{Inteligencia Artificial            \hspace{6cm}        26-I} \\
+%     \vspace{0.1cm}
+% }
+\fancyfoot[R]{\thepage}
+\setlength{\headheight}{3cm}
+\setlength{\headsep}{0.5cm}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[R]{\raisebox{5pt}{\thepage}}
+    \renewcommand{\headrulewidth}{0pt}
+}
+
+% Configuración de captions
+\captionsetup[table]{
+    labelfont=bf,
+    textfont=it,
+    labelsep=colon
+}
+\captionsetup[figure]{
+    labelfont=bf,
+    textfont=it,
+    labelsep=colon
+}
+
+\definecolor{codebg}{rgb}{0.95,0.95,0.92}
+\definecolor{keywordcolor}{rgb}{0.0,0.0,0.8}
+\definecolor{commentcolor}{rgb}{0.0,0.5,0.0}
+\definecolor{stringcolor}{rgb}{0.58,0.0,0.82}
+\definecolor{numbercolor}{rgb}{0.5,0.5,0.5}
+
+\lstset{
+    language=Python,
+    backgroundcolor=\color{codebg},
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{keywordcolor}\bfseries,
+    commentstyle=\color{commentcolor}\itshape,
+    stringstyle=\color{stringcolor},
+    numberstyle=\tiny\color{numbercolor},
+    numbers=left,
+    stepnumber=1,
+    numbersep=5pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    tabsize=2
+}
+
+\lstset{
+  language=C++,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{blue}\bfseries,
+  stringstyle=\color{orange},
+  commentstyle=\color{gray}\itshape,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1,
+  numbersep=10pt,
+  frame=single,
+  rulecolor=\color{black},
+  backgroundcolor=\color{black!2},
+  tabsize=2,
+  captionpos=b,
+  breaklines=true,
+  showstringspaces=false
+}
+
+\lstset{
+    language=SQL,
+    basicstyle=\small\ttfamily,
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=5pt,
+    frame=none,
+    breaklines=true,
+    breakatwhitespace=true,
+    showstringspaces=false,
+    tabsize=2,
+    commentstyle=\color{green!50!black},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    captionpos=b
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\begin{document}
+
+\begin{titlepage}
+ \thispagestyle{empty}
+ \doublespacing
+    \begin{center}
+        {\large UNIVERSIDAD NACIONAL DE SAN ANTONIO ABAD DEL CUSCO} \\[0.1cm]
+        {\large FACULTAD DE INGENIERÍA ELÉCTRICA, ELECTRÓNICA, INFORMÁTICA Y MECÁNICA} \\[0.1cm]
+        {\large ESCUELA PROFESIONAL DE INGENIERÍA INFORMÁTICA Y DE SISTEMAS} \\[0.5cm]
+    \begin{figure}[htb]
+    \centering
+    \includegraphics[scale=0.6]{figures/UNSAAC.png}
+    \end{figure}
+        
+        {\large \textbf{Trabajo}} \\
+        \rule{140mm}{0.7mm} \\
+        {\Large \textbf{''Sistema de cableado estructurado del E.P de Enfermeria''}} \\
+        \rule{140mm}{0.7mm} \\[0.6cm]
+        
+        \begin{tabular}{@{} l l @{}}
+            \textbf{\fontsize{14}{14}\selectfont Asignatura:} & Redes I \\[0.1cm]
+            \textbf{\fontsize{14}{14}\selectfont Docente:}    & Ing. Dueñas Bustinza Darío Francisco \\[0.1cm]
+            \textbf{\fontsize{14}{14}\selectfont Integrantes:} & - integrante 1 \\[0.07cm] 
+                                                               & - Mamani Flores Natan \\[0.07cm]
+                                                               & - Integrante 3 \\[0.07cm]
+                                                               & - Integrante 4 \\[0.07cm]
+            
+            \textbf{\fontsize{14}{14}\selectfont Semestre:}   & 2026-I \\
+        \end{tabular} \\[0.7cm]
+        
+        \textbf{\fontsize{15}{14}\selectfont Cusco-Perú} \\
+        \textbf{\fontsize{15}{14}\selectfont 2026}
+    \end{center}
+\end{titlepage}
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\include{contents}
+
+\include{introduccion}
+\include{capitulo01}
+\include{capitulo02}
+\include{capitulo03}
+
+%\printbibliography
+\clearpage
+\phantomsection   
+\include{bib}
+
+\end{document}
