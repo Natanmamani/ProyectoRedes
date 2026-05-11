@@ -7,9 +7,11 @@
 \usepackage{indentfirst}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\graphicspath{{figures/}{figures/imagenes/}}
+\usepackage[table,xcdraw]{xcolor}
 \usepackage{multirow}
 \usepackage{multicol}
-\usepackage[left=2.54cm,right=2.54cm,top=1.3cm,bottom=4.2cm,headsep=30pt,footskip=0.02cm]{geometry}
+\usepackage[left=2.54cm,right=2.54cm,top=1.3cm,bottom=4.2cm,headsep=30pt,footskip=18pt]{geometry}
 \usepackage{setspace}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
@@ -20,16 +22,13 @@
 \usepackage{pdflscape}
 \usepackage{tocloft}
 \usepackage{listings}
-\usepackage{xcolor}
 \usepackage{array}
-\usepackage[table]{xcolor}
 \usepackage{adjustbox}
 \usepackage{newtxtext}
 \usepackage{newtxmath}
 \usepackage{media9}
 \usepackage{float}
 \usepackage{caption}
-\usepackage[table,xcdraw]{xcolor}
 \usepackage{tabularx}
 \usepackage{hyperref}
 \usepackage{csquotes}
@@ -37,15 +36,39 @@
 \bibliographystyle{plainnat}
 
 % Configuración de titlesec
-\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+% Tamaños más moderados para tesis (evita títulos demasiado grandes)
+\titleformat{\chapter}[hang]{\bfseries\large}{\thechapter}{1em}{}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
 
-\titlespacing*{\section}{0pt}{18pt}{12pt}
-\titlespacing*{\subsection}{0pt}{14pt}{8pt}
-\titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
-\setlength{\parindent}{1.27cm}
+%========================================
+% ESPACIADO DE TITULOS
+%========================================
 
+\titlespacing*{\chapter}{0pt}{0pt}{18pt}
+
+\titlespacing*{\section}
+{0pt}
+{14pt}
+{8pt}
+
+\titlespacing*{\subsection}
+{0pt}
+{10pt}
+{6pt}
+
+\titlespacing*{\subsubsection}
+{0pt}
+{8pt}
+{4pt}
+
+%========================================
+% PARRAFOS
+%========================================
+
+\setlength{\parindent}{1.27cm}
+\setlength{\parskip}{0.08cm}
 \lstset{
     inputencoding=utf8,
     extendedchars=true,
@@ -56,28 +79,47 @@
 }
 
 % Configuración de encabezados y pies de página
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot[R]{\raisebox{-10pt}{\thepage}}
-% \setlength{\headheight}{70pt}
-% \fancyhead[L]{\makebox[0pt]{\includegraphics[height=1.7cm]{imagenes/escudo-1-1.png}}}
-% \fancyhead[R]{\makebox[0pt]{\includegraphics[height=1.7cm]{imagenes/logoCarrera.png}}}
-% \fancyhead[C]{
-%     \footnotesize
-%     \small{Inteligencia Artificial            \hspace{6cm}        26-I} \\
-%     \vspace{0.1cm}
-% }
-\fancyfoot[R]{\thepage}
-\setlength{\headheight}{3cm}
+% - "content": con encabezado (para el contenido del proyecto)
+% - "toc": sin encabezado (para índice)
+\setlength{\headheight}{70pt}
 \setlength{\headsep}{0.5cm}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
 
+% Ajuste fino: bajar un poco los logos para que no queden pegados al borde
+% y añadir una línea (rule) debajo del encabezado.
+\newcommand{\HeaderLeftLogo}{\raisebox{-0.25cm}{\includegraphics[height=1.5cm]{UNSAAC.png}}}
+\newcommand{\HeaderRightLogo}{\raisebox{-0.25cm}{\includegraphics[height=1.5cm]{INGINFO.jpg}}}
+\newcommand{\HeaderCenterText}{\footnotesize Redes I\hspace{6cm}2026-I}
+
+\fancypagestyle{content}{
+    \fancyhf{}
+    \fancyhead[L]{\HeaderLeftLogo}
+    \fancyhead[R]{\HeaderRightLogo}
+    \fancyhead[C]{\HeaderCenterText}
+    \fancyfoot[R]{\thepage}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+\fancypagestyle{toc}{
+    \fancyhf{}
+    \fancyfoot[R]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+% En "book", las páginas iniciales de capítulo usan estilo "plain".
+% Lo mapeamos al estilo con encabezado para que el encabezado salga en el contenido.
 \fancypagestyle{plain}{
     \fancyhf{}
-    \fancyfoot[R]{\raisebox{5pt}{\thepage}}
-    \renewcommand{\headrulewidth}{0pt}
+    \fancyhead[L]{\HeaderLeftLogo}
+    \fancyhead[R]{\HeaderRightLogo}
+    \fancyhead[C]{\HeaderCenterText}
+    \fancyfoot[R]{\thepage}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \renewcommand{\footrulewidth}{0pt}
 }
+
+\pagestyle{content}
 
 % Configuración de captions
 \captionsetup[table]{
@@ -155,6 +197,9 @@
 
 \begin{document}
 
+% Evita advertencias de hyperref por reiniciar numeración (page.1 duplicado)
+\hypersetup{pageanchor=false}
+
 \begin{titlepage}
  \thispagestyle{empty}
  \doublespacing
@@ -187,10 +232,13 @@
         \textbf{\fontsize{15}{14}\selectfont 2026}
     \end{center}
 \end{titlepage}
-\newpage
+\clearpage
+\hypersetup{pageanchor=true}
 \pagenumbering{arabic}
-\setcounter{page}{1}
+\pagestyle{toc}
 \include{contents}
+\clearpage
+\pagestyle{content}
 
 \include{introduccion}
 \include{capitulo01}

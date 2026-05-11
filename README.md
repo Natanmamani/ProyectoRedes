@@ -1,15 +1,11 @@
-<<<<<<< HEAD
 # Proyecto_SO_U1
-desarrollo de la investigacion sobre sitemas operativos etc, desarrollado en latex
+desarrollo de la investigacion sobre redes etc, desarrollado en latex
 
 #clonar
-git clone https://github.com/F4nk1/Proyecto_SO_U1.git
+git clone https://github.com/Natanmamani/ProyectoRedes.git
 
 #commit
 git add .
 git commit -m "descripcion del cambio"
 git push
 
-=======
-# ProyectoRedes
->>>>>>> 926f323dca9e51cd6b95d12412930aaf128892e9
