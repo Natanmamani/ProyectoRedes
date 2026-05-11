@@ -6,6 +6,41 @@
 
 \section{Estándares de racks y gabinetes}
 
+Los racks y gabinetes de telecomunicaciones son los muebles estandarizados donde se alojan los equipos activos (switches, patch panels, UPS) y los pasivos (patch panels, organizadores). Se rigen principalmente por:
+
+\begin{itemize}
+    \item \textbf{EIA/EIA-310-D} e \textbf{IEC 60297}: Definen el ancho estándar de 19" (482.6 mm) para todos los equipos de rack.
+    \item \textbf{TIA-569}: Establece las dimensiones mínimas del cuarto de telecomunicaciones (IDF/MDF) y el espacio de trabajo alrededor del rack (mín. 91 cm al frente, 60 cm atrás).
+    \item \textbf{TIA-942}: Norma para centros de datos que especifica requerimientos de energía, refrigeración y seguridad.
+    \item \textbf{Unidad de Rack (U)}: 1U = 44.45 mm de altura. Un rack de 12U tiene 533.4 mm de espacio útil vertical.
+\end{itemize}
+
+\medskip
+
+De acuerdo con lo anterior, el gabinete seleccionado para el presente proyecto debe cumplir con la norma \textbf{EIA/ECA-310-E} y los estándares mencionados:
+
+\begin{itemize}
+    \item \textbf{Tipo}: Gabinete mural de \textbf{12U o 18U} (unidades de rack) para el nodo principal (MDF), dado que se manejan 28 puntos de red . Siguiendo TIA-569, se deberá garantizar un área de trabajo libre de al menos 91 cm al frente y 60 cm en la parte posterior.
+    
+    \item \textbf{Dimensiones físicas}: Aproximadamente \textbf{600 mm de ancho x 450 mm de profundidad} , compatibles con el estándar de ancho de 19" para equipos.
+    
+    \item \textbf{Especificaciones}:
+    \begin{itemize}
+        \item Estructura de acero laminado en frío de 1.2 mm.
+        \item Puerta frontal de vidrio templado con cerradura de seguridad.
+        \item Sistema de ventilación forzada (kit de 2 ventiladores en la parte superior) para cumplir con los requisitos de refrigeración sugeridos por TIA-942.
+        \item Regleta de alimentación (PDU) de al menos 6 tomas para la distribución eléctrica.
+    \end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{figures/figuresMarco/rack.png}
+    \caption{}
+    \label{fig:placeholder}
+\end{figure}
+
+
 \section{Equipos pasivos y activos}
 
 \section{Requisitos eléctricos y de puesta a tierra}
