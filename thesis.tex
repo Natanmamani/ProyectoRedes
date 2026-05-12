@@ -28,6 +28,7 @@
 \usepackage{newtxmath}
 \usepackage{media9}
 \usepackage{float}
+\usepackage{placeins}
 \usepackage{caption}
 \usepackage{tabularx}
 \usepackage{hyperref}
@@ -37,15 +38,10 @@
 
 % Configuración de titlesec
 % Tamaños más moderados para tesis (evita títulos demasiado grandes)
-\titleformat{\chapter}[hang]{\bfseries\large}{\thechapter}{1em}{}
-\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\chapter}[hang]{\bfseries\LARGE}{\thechapter}{1em}{}
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
-
-%========================================
-% ESPACIADO DE TITULOS
-%========================================
-
 \titlespacing*{\chapter}{0pt}{0pt}{18pt}
 
 \titlespacing*{\section}
@@ -81,13 +77,13 @@
 % Configuración de encabezados y pies de página
 % - "content": con encabezado (para el contenido del proyecto)
 % - "toc": sin encabezado (para índice)
-\setlength{\headheight}{70pt}
+\setlength{\headheight}{85pt}
 \setlength{\headsep}{0.5cm}
 
 % Ajuste fino: bajar un poco los logos para que no queden pegados al borde
 % y añadir una línea (rule) debajo del encabezado.
-\newcommand{\HeaderLeftLogo}{\raisebox{-0.25cm}{\includegraphics[height=1.5cm]{UNSAAC.png}}}
-\newcommand{\HeaderRightLogo}{\raisebox{-0.25cm}{\includegraphics[height=1.5cm]{INGINFO.jpg}}}
+\newcommand{\HeaderLeftLogo}{\raisebox{-0.25cm}{\includegraphics[height=2cm]{UNSAAC.png}}}
+\newcommand{\HeaderRightLogo}{\raisebox{-0.25cm}{\includegraphics[height=2cm]{INGINFO.jpg}}}
 \newcommand{\HeaderCenterText}{\footnotesize Redes I\hspace{6cm}2026-I}
 
 \fancypagestyle{content}{
@@ -201,43 +197,72 @@
 \hypersetup{pageanchor=false}
 
 \begin{titlepage}
- \thispagestyle{empty}
- \doublespacing
-    \begin{center}
-        {\large UNIVERSIDAD NACIONAL DE SAN ANTONIO ABAD DEL CUSCO} \\[0.1cm]
-        {\large FACULTAD DE INGENIERÍA ELÉCTRICA, ELECTRÓNICA, INFORMÁTICA Y MECÁNICA} \\[0.1cm]
-        {\large ESCUELA PROFESIONAL DE INGENIERÍA INFORMÁTICA Y DE SISTEMAS} \\[0.5cm]
+\thispagestyle{empty}
+\doublespacing
+
+\begin{center}
+
+    {\large UNIVERSIDAD NACIONAL DE SAN ANTONIO ABAD DEL CUSCO} \\[0.1cm]
+    
+    {\large FACULTAD DE INGENIERÍA ELÉCTRICA, ELECTRÓNICA, INFORMÁTICA Y MECÁNICA} \\[0.1cm]
+    
+    {\large ESCUELA PROFESIONAL DE INGENIERÍA INFORMÁTICA Y DE SISTEMAS} \\[0.8cm]
+
     \begin{figure}[htb]
-    \centering
-    \includegraphics[scale=0.6]{figures/UNSAAC.png}
+        \centering
+        \includegraphics[scale=0.6]{figures/UNSAAC.png}
     \end{figure}
-        
-        {\large \textbf{Trabajo}} \\
-        \rule{140mm}{0.7mm} \\
-        {\Large \textbf{''Sistema de cableado estructurado del E.P de Enfermeria''}} \\
-        \rule{140mm}{0.7mm} \\[0.6cm]
-        
-        \begin{tabular}{@{} l l @{}}
-            \textbf{\fontsize{14}{14}\selectfont Asignatura:} & Redes I \\[0.1cm]
-            \textbf{\fontsize{14}{14}\selectfont Docente:}    & Ing. Dueñas Bustinza Darío Francisco \\[0.1cm]
-            \textbf{\fontsize{14}{14}\selectfont Integrantes:} & - integrante 1 \\[0.07cm] 
-                                                               & - Mamani Flores Natan \\[0.07cm]
-                                                               & - Integrante 3 \\[0.07cm]
-                                                               & - Integrante 4 \\[0.07cm]
-            
-            \textbf{\fontsize{14}{14}\selectfont Semestre:}   & 2026-I \\
-        \end{tabular} \\[0.7cm]
-        
-        \textbf{\fontsize{15}{14}\selectfont Cusco-Perú} \\
-        \textbf{\fontsize{15}{14}\selectfont 2026}
-    \end{center}
+
+    {\Large \textbf{Proyecto}} \\[0.2cm]
+
+    \rule{140mm}{0.7mm} \\
+
+    {\Large \textbf{``Sistema de cableado estructurado del E.P. de Enfermería''}} \\
+
+    \rule{140mm}{0.7mm} \\[0.5cm]
+
+    \begin{tabular}{@{} l l l @{}}
+
+        \textbf{\fontsize{14}{14}\selectfont Asignatura:}
+        & \multicolumn{2}{l}{Redes I} \\[0.15cm]
+
+        \textbf{\fontsize{14}{14}\selectfont Docente:}
+        & \multicolumn{2}{l}{Ing. Dueñas Bustinza Darío Francisco} \\[0.15cm]
+
+        \textbf{\fontsize{14}{14}\selectfont Integrantes:}
+        & Colque Quispe, Fidel Enrique
+        & 231866 \\[0.07cm]
+
+        &
+        Mamani Flores, Natan
+        & 230970 \\[0.07cm]
+
+        &
+        Mayhuire Chacón, Brenda Lucia
+        & 231445 \\[0.07cm]
+
+        &
+        Polo Chura, Marco Rosauro
+        & 141632 \\[0.07cm]
+
+        \textbf{\fontsize{14}{14}\selectfont Semestre:}
+        & \multicolumn{2}{l}{2026-I} \\
+
+    \end{tabular}
+
+    \vfill
+
+    {\large \textbf{Cusco -- Perú}} \\[0.1cm]
+    {\large \textbf{2026}}
+
+\end{center}
+
 \end{titlepage}
 \clearpage
 \hypersetup{pageanchor=true}
 \pagenumbering{arabic}
 \pagestyle{toc}
 \include{contents}
-\clearpage
 \pagestyle{content}
 
 \include{introduccion}
@@ -246,8 +271,8 @@
 \include{capitulo03}
 
 %\printbibliography
-\clearpage
-\phantomsection   
-\include{bib}
+%%\clearpage
+%%\phantomsection   
+%%\include{bib}
 
 \end{document}

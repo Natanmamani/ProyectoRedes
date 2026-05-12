@@ -14,26 +14,17 @@ implementación, administración y mantenimiento del sistema.
 
 El plano de ubicación identifica la posición del edificio de Enfermería dentro del
 campus de la UNSAAC y su integración con la red institucional administrada por la
-DTIC. Para efectos del diseño, el edificio se identifica como \textbf{Gabinete G09}
-y se conecta a la red de campus mediante fibra óptica tendida en canalización
+DTIC. Para efectos del diseño, el edificio se identifica como y se conecta a la red de campus mediante fibra óptica tendida en canalización
 subterránea, conforme a la norma \mbox{ANSI/TIA-568-C.0}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.92\textwidth]{figures/imagenes/plano_campus.png}
-    \caption{Plano de ubicación general — Campus UNSAAC. El edificio de la Escuela
+    \caption{Plano de ubicación general — Campus perayoc UNSAAC. El edificio de la Escuela
     Profesional de Enfermería (Gabinete G09) se indica con el recuadro rojo en el
     sector sureste. Plano N.° G00CBSN01, Esc.\ 1:100.}
     \label{fig:plano_ubicacion_campus}
 \end{figure}
-
-La red sigue una topología jerárquica de tres capas: el núcleo en el centro de
-datos de la DTIC, la distribución en nodos de campus y el acceso en el MDF del
-edificio. El \textbf{Main Distribution Frame (MDF)} se ubica en el cuarto nivel
-del inmueble, cumpliendo los criterios de la norma \mbox{ANSI/TIA-569-D}: proximidad
-al punto de ingreso de la fibra, condiciones ambientales adecuadas (18--27\,°C,
-30--55\% HR) y espacio suficiente para mantenimiento y crecimiento futuro.
-
 % -----------------------------------------------------------
 \section{Planos de planta con puntos de red y canalizaciones}
 \label{sec:planos_planta}
@@ -71,17 +62,7 @@ la norma \mbox{ANSI/TIA-606-B} y adaptado al esquema institucional de la UNSAAC.
     \end{tabular}
 \end{table}
 
-Este esquema garantiza la trazabilidad de cada punto de red desde el outlet hasta
-el puerto del patch panel en el rack, facilitando la gestión y el mantenimiento.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.70\textwidth]{figures/imagenes/leyenda_puntos_red.png}
-    \caption{Leyenda del plano de puntos de red y estructura del código GXX-DYY.}
-    \label{fig:leyenda_puntos}
-\end{figure}
-
-\subsection{Primer nivel — Área administrativa y biblioteca}
+\subsection{Primer nivel}
 
 El primer nivel concentra las dependencias administrativas de la facultad: Decanato,
 Secretaría Docente, Coordinación, Jefatura, Sala de Lectura, Almacén de Libros,
@@ -96,7 +77,6 @@ establecidos por \mbox{ANSI/TIA-568-C.1}.
     y rutas de canalización. Esc.\ 1:100.}
     \label{fig:plano_primer_nivel}
 \end{figure}
-
 \begin{table}[H]
     \centering
     \caption{Distribución de puntos de red — Primer nivel.}
@@ -118,7 +98,7 @@ establecidos por \mbox{ANSI/TIA-568-C.1}.
     \end{tabular}
 \end{table}
 
-\subsection{Segundo nivel — Área académica}
+\subsection{Segundo nivel}
 
 Este nivel alberga las aulas 201--204, la Galería (Aula 210) y el Ambiente 209.
 Se instalaron \textbf{6 puntos de red} (G09-D08 a G09-D13), orientados
@@ -132,7 +112,6 @@ y videoconferencia.
     y rutas de canalización. Esc.\ 1:100.}
     \label{fig:plano_segundo_nivel}
 \end{figure}
-
 \begin{table}[H]
     \centering
     \caption{Distribución de puntos de red — Segundo nivel.}
@@ -146,14 +125,14 @@ y videoconferencia.
         G09-D10 & Aula 204     & 2 & Estudiantes / AP WiFi \\
         G09-D11 & Aula 203     & 2 & Docente + Proyector \\
         G09-D12 & Aula 202     & 2 & Docente + Proyector \\
-        G09-D13 & Ambiente 209 & 2 & PC + VoIP \\
+        G09-D13 & Aula 201     & 2 & PC + VoIP \\
         \hline
         \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{12} & \\
         \hline
     \end{tabular}
 \end{table}
 
-\subsection{Cuarto nivel — MDF y ambientes complementarios}
+\subsection{Cuarto nivel}
 
 El cuarto nivel es el más relevante en términos de infraestructura, ya que aloja
 el \textbf{Gabinete G09 (MDF)}. Cuenta con \textbf{16 puntos de red}
@@ -167,7 +146,6 @@ Salón de Grados y Depósito.
     ubicación del Gabinete G09 (MDF). Esc.\ 1:100.}
     \label{fig:plano_cuarto_nivel}
 \end{figure}
-
 \begin{table}[H]
     \centering
     \caption{Distribución de puntos de red — Cuarto nivel.}
@@ -228,10 +206,8 @@ cable se realiza aproximadamente cada 1.5\,m. Los sistemas empleados son canalet
 PVC con tapa, conduit EMT de 3/4'' y 1'', bandejas portacables metálicas en cielo
 raso y cajas de registro cada 15\,m como máximo.
 
-% -----------------------------------------------------------
 \section{Plano de racks, patch panels y salas de telecomunicaciones}
 \label{sec:plano_racks}
-% -----------------------------------------------------------
 
 Las salas de telecomunicaciones (TR, según \mbox{ANSI/TIA-569-D}) son espacios
 dedicados a equipos activos, patch panels, UPS y demás componentes del cableado
@@ -498,7 +474,6 @@ la sala de lectura, logrando una cobertura de $\geq -70$\,dBm en el 96\% del
     excelente) a rojo (zona muerta, $< -85$\,dBm).}
     \label{fig:mapa_calor_1}
 \end{figure}
-
 \subsubsection{Segundo nivel — Área académica}
 
 Se proyectan dos APs Wi-Fi 6 con OFDMA y MU-MIMO: AP-01-N2 para las aulas
@@ -513,7 +488,6 @@ simultáneos por AP y cobertura de $\geq -70$\,dBm en el 97\% de las aulas.
     (15--20\%) necesario para roaming continuo.}
     \label{fig:mapa_calor_2}
 \end{figure}
-
 \subsubsection{Cuarto nivel}
 
 Se proyectan tres APs: AP-01-N4 y AP-02-N4 para los ambientes de trabajo y
@@ -529,7 +503,6 @@ cobertura de $\geq -70$\,dBm en el 98\% del área útil.
     por ser de acceso restringido.}
     \label{fig:mapa_calor_4}
 \end{figure}
-
 \subsection{Distribución de APs y resumen de cobertura}
 
 \begin{table}[H]
@@ -552,8 +525,7 @@ cobertura de $\geq -70$\,dBm en el 98\% del área útil.
         \multicolumn{3}{|l|}{\textbf{Total}} & \textbf{610} & \\
         \hline
     \end{tabular}
-\end{table}
-
+\end{table}%
 \begin{table}[H]
     \centering
     \caption{Resumen del análisis de cobertura WiFi por nivel.}
@@ -571,7 +543,6 @@ cobertura de $\geq -70$\,dBm en el 98\% del área útil.
         \hline
     \end{tabular}
 \end{table}
-
 \subsection{Especificaciones técnicas de los Access Points}
 
 \begin{table}[H]
@@ -619,7 +590,3 @@ Gabinete G09 cuenta con cerradura de seguridad. Todos los elementos están
 etiquetados según \mbox{ANSI/TIA-606-B} y se lleva un registro de accesos.
 Complementariamente, se recomienda vigilancia CCTV y se instala detector de humo
 con extintor de CO\textsubscript{2} para proteger los equipos sin dañarlos.
-
-% -----------------------------------------------------------
-%  FIN DEL CAPÍTULO
-% -----------------------------------------------------------
